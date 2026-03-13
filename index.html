@@ -214,50 +214,7 @@
     <p>© 2025 All rights reserved</p>
   </footer>
 
-  <script>
-    const sections = document.querySelectorAll('.home, .section');
-    const achievementItems = document.querySelectorAll('.achievement__item');
-    const projectItems = document.querySelectorAll('.work__img');
-
-    const observer = new IntersectionObserver((entries, observerInstance) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          console.log('Animating:', entry.target.id || entry.target.className);
-          entry.target.classList.add('animate');
-          // Stop observing after animation class added to prevent toggle
-          observerInstance.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
-
-    sections.forEach(section => {
-      observer.observe(section);
-    });
-
-    achievementItems.forEach(item => {
-      observer.observe(item);
-    });
-
-    projectItems.forEach(item => {
-      observer.observe(item);
-    });
-
-    // Mobile menu toggle
-    const navToggle = document.getElementById('nav-toggle');
-    const navList = document.querySelector('.nav__list');
-
-    navToggle.addEventListener('click', () => {
-      navList.classList.toggle('show');
-    });
-
-    // Close menu when a link is clicked
-    const navLinks = document.querySelectorAll('.nav__link');
-    navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        navList.classList.remove('show');
-      });
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 
 </html>
