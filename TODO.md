@@ -1,0 +1,1 @@
+# TODO: Make buttons horizontal\n\n- [ ] 1. Confirm plan with user\n- [ ] 2. Override mobile CSS for .home__buttons to force flex-direction: row\n- [ ] 3. Verify layout on desktop/mobile\n- [ ] 4. Mark complete\n

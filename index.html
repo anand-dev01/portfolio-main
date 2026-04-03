@@ -16,24 +16,17 @@
 <body>
 
   <!-- ===== HEADER ===== -->
-  <header>
-    <nav class="nav">
-      <a href="#" class="nav__logo"> Portfolio</a>
-      <ul class="nav__list">
-        <li><a href="#home" class="nav__link active-link">Home</a></li>
-        <li><a href="#about" class="nav__link">About</a></li>
-        <li><a href="#skills" class="nav__link">Skills</a></li>
-        <li><a href="#achievements" class="nav__link">Academic Achievements</a></li>
-        <li><a href="#certificate" class="nav__link">Certificates</a></li>
-        <li><a href="#work" class="nav__link">Projects</a></li>
-        <li><a href="#contact" class="nav__link">Contact</a></li>
-
-      </ul>
-      <div class="nav__toggle" id="nav-toggle">
-        <i class='bx bx-menu'></i>
-      </div>
-    </nav>
-  </header>
+  <nav class="nav">
+    <ul class="nav__list">
+      <li><a href="#home" class="nav__link active-link">Home</a></li>
+      <li><a href="#about" class="nav__link">About</a></li>
+      <li><a href="#skills" class="nav__link">Skills</a></li>
+      <li><a href="#achievements" class="nav__link">Academic Achievements</a></li>
+      <li><a href="#certificate" class="nav__link">Certificates</a></li>
+      <li><a href="#work" class="nav__link">Projects</a></li>
+      <li><a href="#contact" class="nav__link">Contact</a></li>
+    </ul>
+  </nav>
 
   <!-- ===== MAIN ===== -->
   <main>
@@ -42,7 +35,7 @@
     <section class="home" id="home">
       <div class="home__data">
         <h1>
-          Hi  I'm  Anand <br>
+          Hi I'm Anand <br>
         </h1><br>
         <h3>
           I'm a Web Developer who loves building clean, modern and user friendly wesites.
@@ -117,7 +110,7 @@
             <div class="skills__bar"><i style="width: 80%; --width: 80%;"></i></div>
           </div>
         </div>
-        <center> <img src="assets/abu.jpg" alt="" class="skills__img"> </center>
+        <center> <img src="assets/abu.jpeg" alt="" class="skills__img"> </center>
       </div>
     </section>
 
@@ -211,8 +204,21 @@
   <!-- ===== FOOTER ===== -->
   <footer>
     <h3>Thankyou for visiting my portfolio</h3>
-    <p>© 2025 All rights reserved</p>
+    <p> 2026 All rights reserved</p>
   </footer>
+
+  <div class="theme-settings">
+    <button class="theme-settings__toggle" id="theme-toggle" type="button" aria-label="Open theme settings">
+      <i class='bx bx-cog'></i>
+      <span>Theme</span>
+    </button>
+    <div class="theme-settings__panel" id="theme-panel" hidden>
+      <p class="theme-settings__title">Choose Theme</p>
+      <button class="theme-option" type="button" data-theme="light">Light</button>
+      <button class="theme-option" type="button" data-theme="dark">Dark</button>
+      <button class="theme-option" type="button" data-theme="sunset">Custom</button>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>

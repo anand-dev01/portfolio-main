@@ -32,9 +32,51 @@ if (navToggle && navList) {
   });
 }
 
-const navLinks = document.querySelectorAll(".nav__link");
-navLinks.forEach((link) => {
-  link.addEventListener("click", () => {
-    navList?.classList.remove("show");
+// Removed auto-close for mobile menu on nav click to prevent hiding
+// const navLinks = document.querySelectorAll(".nav__link");
+// navLinks.forEach((link) => {
+//   link.addEventListener("click", () => {
+//     navList?.classList.remove("show");
+//   });
+// });
+
+const themeToggle = document.getElementById("theme-toggle");
+const themePanel = document.getElementById("theme-panel");
+const themeOptions = document.querySelectorAll(".theme-option");
+const themeStorageKey = "portfolio-theme";
+
+function setTheme(themeName) {
+  document.body.setAttribute("data-theme", themeName);
+  localStorage.setItem(themeStorageKey, themeName);
+
+  themeOptions.forEach((option) => {
+    option.classList.toggle("is-active", option.dataset.theme === themeName);
+  });
+}
+
+const savedTheme = localStorage.getItem(themeStorageKey) || "dark";
+setTheme(savedTheme);
+
+if (themeToggle && themePanel) {
+  themeToggle.addEventListener("click", () => {
+    const isHidden = themePanel.hasAttribute("hidden");
+    if (isHidden) {
+      themePanel.removeAttribute("hidden");
+    } else {
+      themePanel.setAttribute("hidden", "");
+    }
+  });
+
+  document.addEventListener("click", (event) => {
+    const clickedInsideSettings = event.target.closest(".theme-settings");
+    if (!clickedInsideSettings) {
+      themePanel.setAttribute("hidden", "");
+    }
+  });
+}
+
+themeOptions.forEach((option) => {
+  option.addEventListener("click", () => {
+    setTheme(option.dataset.theme);
   });
 });
